@@ -10,6 +10,16 @@ scalaVersion := "2.13.2"
 libraryDependencies += guice
 libraryDependencies += "org.scalatestplus.play" %% "scalatestplus-play" % "5.0.0" % Test
 
+inThisBuild(
+  List(
+    scalaVersion := "2.13.2",
+    semanticdbEnabled := true,
+    semanticdbVersion := scalafixSemanticdb.revision
+  )
+)
+
+scalacOptions := Seq("-feature", "-deprecation", "-Ywarn-unused")
+
 // Adds additional packages into Twirl
 //TwirlKeys.templateImports += "com.baeldung.controllers._"
 
